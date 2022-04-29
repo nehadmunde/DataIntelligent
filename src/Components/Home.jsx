@@ -10,9 +10,8 @@ const Home = () => {
   const onLikeHandle = (param) => {
     localStorage.setItem('sendData', JSON.stringify(state));
     let newData = JSON.parse(localStorage.getItem('sendData'));
+    alert('liked One.');
     setState([...newData, param]);
-    // alert(`Like ${newData.name}`);
-    localStorage.setItem('sendData', JSON.stringify(state));
     console.log(state);
   };
 

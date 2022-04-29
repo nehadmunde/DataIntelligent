@@ -7,10 +7,15 @@ const Like = () => {
   const onUnlikeHandle = (param) => {
     data.splice(param, 1);
     localStorage.setItem('sendData', JSON.stringify(data));
+    alert('Unliked one.');
     // alert(`Unlike ${data[param].name}`);
     console.log('data from Unlike', data);
+    refreshPage();
   };
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
   useEffect(() => {
     let data = JSON.parse(localStorage.getItem('sendData'));
   }, []);
